@@ -1,8 +1,14 @@
 version: "3"
+
 services:
   tor_service:
     build: .
-    container_name: tor
+    container_name: express_server
+    volumes:
+      - "hidden_service:/home/tor/hidden_service"
     ports:
-      - 9050:9050
+      - "80:80"
     restart: always
+
+volumes:
+  hidden_service:

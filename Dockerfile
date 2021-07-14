@@ -1,17 +1,24 @@
-FROM alpine:3
+FROM node:14-alpine
 
-RUN apk update && apk add tor
+RUN apk update \
+    && apk add tor supervisor
 
-# Copy over the torrc and set the owner to `tor`
 COPY torrc /etc/tor/torrc
 RUN chown -R tor /etc/tor
 
-# Set `tor` as the default user during the container runtime
+COPY supervisor.conf /etc/supervisor.conf
+
+WORKDIR /home/tor
+
+COPY package*.json ./
+RUN npm install
+COPY . .
+
+RUN chown -R tor /home/tor
 USER tor
+RUN mkdir -p /home/tor/hidden_service \
+    && chmod -R 700 /home/tor/hidden_service
 
-# Set `tor` as the entrypoint for the image
-ENTRYPOINT ["tor"]
+ENTRYPOINT ["supervisord"]
 
-# Set the default container command
-# This can be overridden later when running a container
-CMD ["-f", "/etc/tor/torrc"]
+CMD ["-c", "/etc/supervisor.conf"]

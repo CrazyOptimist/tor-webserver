@@ -1,0 +1,25 @@
+.head{
+    font-family: 'Courier New', Courier, monospace;
+    color:  #f39c12;
+}
+.line{
+    height: 4px;
+    display: inline-block
+}
+.start{
+    width: 25%;
+    background-color:#17a589;
+    
+}
+.middle{
+    width: 50%;
+    background-color:#f4d03f;
+}
+.end{
+    width: 25%;
+    background-color:#3498db;
+}
+.texts{
+    font-family: 'Courier New', Courier, monospace;
+    color: #424949 ;
+}

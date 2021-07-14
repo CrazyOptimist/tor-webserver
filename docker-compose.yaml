@@ -1,0 +1,8 @@
+version: "3"
+services:
+  tor_service:
+    build: .
+    container_name: tor
+    ports:
+      - 9050:9050
+    restart: always

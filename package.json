@@ -1,15 +1,21 @@
 {
   "name": "tor-express-server",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "description": "Node.js web hosting on the Darknet",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "author": "CrazyOptimist<crazyoptimist@mail.com>",
   "license": "MIT",
   "dependencies": {
     "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^12.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }

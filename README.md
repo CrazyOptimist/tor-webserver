@@ -1,12 +1,12 @@
-# Express EJS Website on Tor Network
+# Dockerised Markdown Blog on Tor Network
 
-## Run in production
+## Run
 ```
 docker-compose up -d
 ```
-Your `hidden_service` folder will be persisted as a volume labeled `tor-website_hidden_service` on the host machine.  
+Your `hidden_service` folder will be persisted on the host machine.  
 
 ## LICENSE
 MIT
 
-*Created by CrazyOptimist with :heart:*
+*Created by crazyoptimist with :heart:*
